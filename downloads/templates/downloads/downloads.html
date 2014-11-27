@@ -1,0 +1,17 @@
+{% load templatetags %}
+{% header %}
+{% load staticfiles %}
+
+<div id="para-a">Downloads</div>
+<div id="para-b">
+<div id="listing">
+{% for item in items %}
+				{% if item.isdir  %}
+								<li><a class="dir" href="./{{ item.name }}/">{{ item.name }}/</a>
+				{% else %}
+								<li><a class="file" href="/downloads/{{ location }}{{ item.name }}">{{ item.name }}</a>
+								<div class="size">{{ item.size }} MB</div>
+				{% endif %}
+{% endfor %}
+</div>
+</div>

@@ -1,0 +1,118 @@
+/*--------------Fonts---------------
+font-family: 'Monofett', cursive;
+font-family: 'Ubuntu', sans-serif;
+-----------------------------------*/
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url("/static/ubuntu.woff") format('woff')
+}
+
+@font-face {
+	font-family: 'Monofett';
+	src: url("/static/monofett.woff") format('woff')
+}
+
+
+.background{
+	background-color:#CCCCCC;
+	border-top:5px solid;
+	border-color:black;
+	margin:0;
+	font-family: 'Ubuntu', sans-serif;
+	text-align:center;
+	}
+
+
+#header{
+	color:#87D9FA;
+	border-top: 1px solid;
+	border-bottom: 10px solid;
+	border-color:#00B7FF;
+	font-size:85px;
+	font-family: 'Monofett', cursive;
+	padding:35px;
+	text-align:center;
+	border-bottom-right-radius:15px;
+	border-bottom-left-radius:15px;
+	background-color:#1F60B4;
+	}
+
+/*---------------Navigation---------------*/
+#menusurround{
+	background-color:none;
+	margin:auto auto 15px auto;
+	padding-top:6px;
+	max-width:800px;
+	text-align:left;
+	}
+
+.menubutton{
+	color:black;
+	background-color:#E4A846;
+	margin-left:5px;
+	padding:7px;
+	font-size:15px;
+	text-decoration:none;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	}
+
+.menubutton:hover{
+	color:#E4A846;
+	background-color:#00B7FF;
+	}
+/*--------------Main stuff---------------*/
+
+#bodywrapper{
+	padding:0 25px 0 25px;
+	width:850px;
+	margin:0 auto 0 auto;
+	}
+
+#para-a{
+	background-color:gray;
+	font-size:25px;
+	padding:17px;
+	border-radius:20px 20px 0 0;
+	overflow:auto;
+	text-align:left;
+	}
+
+#para-b{
+	text-align:left;
+	background-color:#EBEBEB;
+	padding:17px;
+	border-radius:0 0 20px 20px;
+	text-align:left;
+        margin:0 0 15px 0;
+	}
+
+.category{
+    color:gray;
+    text-align:right;
+    margin-top:30px;
+}
+
+
+    
+/*---------------Listing---------------*/
+#listing li {
+	margin:15px;
+}
+
+#listing li a {
+	text-decoration:none;
+}
+
+#listing li .dir {
+	color:red;
+}
+
+#listing li .file {
+	color:blue;
+}
+
+#listing li .size {
+	float:right;
+}
