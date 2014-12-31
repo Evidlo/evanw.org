@@ -1,16 +1,15 @@
-{% load templatetags %}
-{% header %}
-{% load staticfiles %}
+{% extends 'base.html' %}
 
+{% block content %}
 {% for post in posts %}
     <div id="para-a">{{ post.title }}</div>
-    <div id="para-b">{{ post.text }}
-        <br>
+    <div id="para-b">
+    <p class='desc'> {{ post.text }}</p>
         <div class="category">
             Categories: {% for category in post.categories.all %}
-							<a href="{% url 'blog.views.index' category %}">{{ category }}</a>,
+							<a href="{% url 'blog.views.index' category=category %}">{{ category }}</a>,
 						{% endfor %}
         </div>
     </div>
 {% endfor %}
-
+{% endblock %}

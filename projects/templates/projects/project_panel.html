@@ -1,0 +1,22 @@
+{% load thumbnail %}
+<div class="project">
+    <a href="{% url 'projects.views.detail' project=project.id %}">
+        <div id="para-a"> {{ project.title }}</div>
+    </a>
+  
+    <div id="para-b"> 
+        {% thumbnail project.image_set.all.0.image "400" as thumb %}
+             <img class="thumb" src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ recipe.title }}" />
+        {% endthumbnail %}
+
+        <p claass='desc'>{{ project.description }}</a>
+
+        <div class="category">
+            Categories: 
+            {% for category in project.categories.all %}
+                <a href="{% url 'projects.views.index' category=category %}">{{ category }}</a>,
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
