@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="project_container">
+{% load thumbnail %}
+
+<div id="para-a"> {{ project.title }}</div>
+<div id="para-b"> 
+    <div class='desc'> {{ project.text |safe}}</div>
+
+    <div id="gallery">
+    {% for photo in project.image_set.all %}
+        <div class="image">
+        {% thumbnail photo.image "400" as thumb %}
+            <a href='{{ photo.image.url }}'> <img src="{{ thumb.url }}"/></a>
+        {% endthumbnail %}
+        <p class="desc">
+        {{ photo.description |safe }}
+        </p>
+        </div>
+    {% endfor %}
+    </div>
+
+    <div class="category">
+        Categories:
+        {% for category in project.categories.all %}
+            <a href="{% url 'projects.views.index' category %}">{{ category }}</a>,
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+{% endblock %}
