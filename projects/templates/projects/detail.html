@@ -3,9 +3,14 @@
 <div id="project_container">
 {% load thumbnail %}
 
-<div id="para-a"> {{ project.title }}</div>
+<div id="para-a">
+    {{ project.title }}
+    <div style='color:{{ project.status_color }};' class="status">
+        {{ project.status }}
+    </div>
+</div>
 <div id="para-b"> 
-    <div class='desc'> {{ project.text |safe}}</div>
+    <p>{{ project.text |safe}}</p>
 
     <div id="gallery">
     {% for photo in project.image_set.all %}
@@ -13,19 +18,26 @@
         {% thumbnail photo.image "400" as thumb %}
             <a href='{{ photo.image.url }}'> <img src="{{ thumb.url }}"/></a>
         {% endthumbnail %}
-        <p class="desc">
+        <div class="desc">
         {{ photo.description |safe }}
-        </p>
+        </div>
         </div>
     {% endfor %}
     </div>
 
+    <div class="bottom_bar">
+    <div class="pub_date">
+        Published {{ project.pub_date }}
+    </div>
     <div class="category">
         Categories:
         {% for category in project.categories.all %}
             <a href="{% url 'projects.views.index' category %}">{{ category }}</a>,
         {% endfor %}
     </div>
+    <div style="clear:both;"></div>
+    </div>
+
 </div>
 </div>
 

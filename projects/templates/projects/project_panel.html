@@ -9,13 +9,15 @@
              <img class="thumb" src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ recipe.title }}" />
         {% endthumbnail %}
 
-        <p claass='desc'>{{ project.description }}</a>
+        <p>{{ project.description }}</p>
 
-        <div class="category">
-            Categories: 
-            {% for category in project.categories.all %}
-                <a href="{% url 'projects.views.index' category=category %}">{{ category }}</a>,
-            {% endfor %}
+        <div class="bottom_bar">
+            <div class="category">
+                Categories: 
+                {% for category in project.categories.all %}
+                    <a href="{% url 'projects.views.index' category=category %}">{{ category }}</a>,
+                {% endfor %}
+            </div>
         </div>
     </div>
 
