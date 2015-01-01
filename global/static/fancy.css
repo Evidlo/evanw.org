@@ -39,10 +39,6 @@ font-family: 'Ubuntu', sans-serif;
     }
 
 /* para-a link color */
-a #para-a{
-    text-decoration:none;
-    color:black;
-    }
 
 .thumb{
     width:80%;
@@ -53,6 +49,10 @@ a #para-a{
 .column{
     display:inline-block;
     vertical-align:top;
+    }
+
+p {
+    margin:0;
     }
 
 /*---------------Navigation---------------*/
@@ -102,13 +102,29 @@ a #para-a{
     padding:17px;
     border-radius:0 0 20px 20px;
     text-align:left;
-        margin:0 0 15px 0;
+    margin:0 0 15px 0;
     }
 
-.category{
+/*---------- Bottom Category + Pubdate bar --------------*/
+
+.bottom_bar{
     color:gray;
+    margin-top:10px;
+    }
+
+.bottom_bar:after{
+    content: "";
+    display: table;
+    clear:both;
+    }
+
+.pub_date{
+    display:inline-block;
+    float:left;
+    }
+.category{
+    float:right;
     text-align:right;
-    margin-top:30px;
 }
 
 .category a{
@@ -167,5 +183,14 @@ a #para-a{
     }
 
 .desc{
+    margin:5px;
     word-wrap:break-word;
+    text-align:center;
+    }
+
+.status{
+    float:right;
+    border-radius:10px;
+    background-color:lightgray;
+    padding:5px;
     }
