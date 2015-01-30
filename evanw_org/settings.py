@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'downloads',
     'global',
 	'projects',
-	'sorl.thumbnail',
+	'easy_thumbnails',
 )
 #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
 MIDDLEWARE_CLASSES = (
